@@ -11,6 +11,14 @@
                 "args": [
                     "-g", "main.cpp","Concert.cpp","-o","a"
                 ]
+            },
+            "osx": {
+                "command": "clang++",
+                "args": [
+                    "main.cpp", "Concert.cpp", "-o","a"
+                ]
+            }
+
             }
         }
     ]
