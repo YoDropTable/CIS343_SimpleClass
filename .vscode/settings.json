@@ -1,4 +1,5 @@
 {
+    "C_Cpp.intelliSenseEngine": "Default",
     "files.associations": {
         "cmath": "cpp",
         "cstddef": "cpp",
@@ -35,6 +36,11 @@
         "xstddef": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "__bit_reference": "cpp",
+        "__split_buffer": "cpp",
+        "string_view": "cpp"
     }
 }

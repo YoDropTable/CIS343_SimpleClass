@@ -15,7 +15,7 @@
             "osx": {
                 "command": "clang++",
                 "args": [
-                    "main.cpp", "Concert.cpp", "-o","a"
+                    "main.cpp", "Concert.cpp", "-o","a", "--std=c++11"
                 ]
             }
 

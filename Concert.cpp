@@ -1,5 +1,6 @@
 #include "Concert.h"
 #include <ctime>
+#include <iomanip>
 
 //Null Constructor
 Concert::Concert(){
@@ -17,6 +18,14 @@ Concert::Concert(std::string pName,std::vector<std::string> pFriends, int pDesir
     this->date = pTime; 
 }
 
+Concert::Concert( const Concert& copy_from){
+    this->concertName = copy_from.concertName;
+    this->friends.clear();
+    this->friends = copy_from.friends;
+    this->desire = copy_from.desire;
+    this->date = copy_from.date;
+}
+
 Concert& Concert::operator=(const Concert& copy_from){
     this->concertName = copy_from.concertName;
     this->friends.clear();
@@ -27,13 +36,21 @@ Concert& Concert::operator=(const Concert& copy_from){
 }
 
 bool Concert::operator<(const Concert& compare_to){
-    int Year,cYear, Month,cMonth, Day,cDay, Hour,cHour, Min,cMin, Sec,cSec;
-    Year = this->date.tm_year;
-    cYear = compare_to.date.tm_year;
-    return Year<cYear;
+    double seconds = 0;
+
+    std::tm *right = new tm(compare_to.date);
+    std::time_t leftCon = std::mktime(&this->date);
+    std::time_t rightCon = std::mktime(right);
+    ;
+    
+    seconds = difftime(leftCon,rightCon);
+    if(seconds < 0){
+        return true;
+    }
+    return false;
 }
 
 std::ostream& operator<<(std::ostream& out, const Concert& pCon){
-   out << "Hello World 2.o :) " << pCon.concertName << "\n";
+   out <<  pCon.concertName << " Showtime:" << std::put_time(&pCon.date,"%c %Z") <<"\n";
    return out;
 }

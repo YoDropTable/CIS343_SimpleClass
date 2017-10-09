@@ -15,7 +15,7 @@ public:
         Concert& operator=(const Concert& copy_from);
         bool operator<(const Concert& compre_to);
         friend std::ostream& operator<< (std::ostream& os, const Concert& pCon);
-private:
+//private:
         // Who will be performing?
         std::string concertName;
 
